@@ -25,6 +25,7 @@ This project is a clone of the popular food delivery app Swiggy. It allows users
   - Dineout
   - Genie
   - Groceries
+  - At presnt i mainly focused only on food delivery
 - **Food Delivery**: Users can browse through top restaurants, search for items, view menus, and place orders.
 - **Cart**: The cart allows users to add food items from one restaurant at a time, adjust quantities, and view the total price.
 - **Favorites**: Users can add or remove items from their favorites list.
