@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { RegistrationServiceService } from '../register/registration-service.service';
+import { RegistrationServiceService } from '../../services/registration-service.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 

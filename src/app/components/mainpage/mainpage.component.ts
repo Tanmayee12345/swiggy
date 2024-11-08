@@ -4,7 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { MainnavbarComponent } from '../mainnavbar/mainnavbar.component';
 import { FormsModule } from '@angular/forms';
-import { TopresaurantsserviceService } from '../topresaurants/topresaurantsservice.service';  // Ensure correct service name
+import { TopresaurantsserviceService } from '../../services/topresaurantsservice.service';  // Ensure correct service name
 
 @Component({
   selector: 'app-mainpage',

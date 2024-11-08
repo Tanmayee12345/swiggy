@@ -4,7 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { TopresaurantsserviceService } from './topresaurantsservice.service';
+import { TopresaurantsserviceService } from '../../services/topresaurantsservice.service';
 import { Router } from '@angular/router';
 
 

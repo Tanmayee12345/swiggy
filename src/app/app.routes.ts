@@ -1,18 +1,30 @@
 import { Routes} from '@angular/router';
-
-import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.component';
-import { HomeComponent } from './home/home.component';
-import { SearchComponent } from './search/search.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { MainpageComponent } from './components/mainpage/mainpage.component';
+import { HomeComponent } from './components/home/home.component';
+import { RestaurantMenuComponent } from './components/restaurant-menu/restaurant-menu.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { CartComponent } from './components/cart/cart.component';
 import { authGuard } from './auth.guard';
-import { LogoutComponent } from './logout/logout.component';
-import { CartComponent } from './cart/cart.component';
-import { FavoritesComponent } from './favourites/favourites.component';
-import { HelpComponentComponent } from './help-component/help-component.component';
-import { OffersComponent } from './offers/offers.component';
-import { MainnavbarComponent } from './mainnavbar/mainnavbar.component';
-import { MainpageComponent } from './mainpage/mainpage.component';
+import { SearchComponent } from './components/search/search.component';
+import { FavoritesComponent } from './components/favourites/favourites.component';
+import { HelpComponentComponent } from './components/help-component/help-component.component';
+import { OffersComponent } from './components/offers/offers.component';
+
+// import { RestaurantMenuComponent } from './restaurant-menu/restaurant-menu.component';
+// import { HomeComponent } from './home/home.component';
+// import { SearchComponent } from './search/search.component';
+// import { LoginComponent } from './login/login.component';
+// import { RegisterComponent } from './register/register.component';
+// import { authGuard } from './auth.guard';
+// import { LogoutComponent } from './logout/logout.component';
+// import { CartComponent } from './cart/cart.component';
+// import { FavoritesComponent } from './favourites/favourites.component';
+// import { HelpComponentComponent } from './help-component/help-component.component';
+// import { OffersComponent } from './offers/offers.component';
+// import { MainnavbarComponent } from './mainnavbar/mainnavbar.component';
+// import { MainpageComponent } from './mainpage/mainpage.component';
 
 export const routes: Routes = [
   {path:'',component:MainpageComponent},

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TopresaurantsserviceService } from '../topresaurants/topresaurantsservice.service';
+import { TopresaurantsserviceService } from '../../services/topresaurantsservice.service';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
