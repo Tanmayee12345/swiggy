@@ -1,0 +1,24 @@
+
+<app-navbar></app-navbar><div *ngIf="userFavorites.length > 0" class="favorites-container mt-4 md:mx-40">
+  <h1 class="text-xl font-bold mb-4 favourite">Your Favorite Items:</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <mat-card *ngFor="let item of userFavorites" class="item-card flex flex-col sm:flex-row justify-between bg-white shadow-md rounded-lg">
+      <div class="p-4">
+        <mat-card-title class="text-lg font-bold text-gray-800">{{ item.name }}</mat-card-title> <!-- Added font-bold here -->
+        <mat-card-content class="text-gray-600">{{ item.description }}</mat-card-content>
+        <button class="ml-4 my-2 p-2 text-white bg-gray-800">{{ item.price | currency:'INR':'symbol':'1.0-0' }}</button>
+      </div>
+      
+      <div class="flex flex-col items-center p-4">
+        <img mat-card-image [src]="item.img" alt="{{ item.name }}" class="item-image h-36 w-36 m-2 rounded">
+        <button (click)="removeFromFavorites(item)" class="mt-4 w-full bg-red-500 text-white font-medium py-2 rounded-lg hover:bg-red-600 transition duration-200 md:w-40">
+          Remove from Favorites
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<div *ngIf="userFavorites.length === 0" class="favorites-empty mt-4 text-center">
+  <p>No items in your favorites yet.</p>
+</div>

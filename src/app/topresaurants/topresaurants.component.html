@@ -1,0 +1,131 @@
+
+<div class="shadow-md">
+  <div class="flex flex-col md:flex-row justify-between items-center md:px-52 mb-4">
+    <div class="flex w-full justify-between items-center">
+      <!-- Title -->
+      <p class="text-gray-950 text-xl md:text-2xl font-semibold pt-5">Top Restaurants in Kurnool</p>
+      
+      <!-- Navigation Buttons (displayed beside the title on small screens) -->
+      <div class="flex items-center space-x-2 ml-2 md:ml-0 mt-2 md:mt-0">
+        <button class="arrow-button" (click)="moveLeft()" aria-label="Scroll Left">
+          <i>&larr;</i>
+        </button>
+        <button class="arrow-button" (click)="moveRight()" aria-label="Scroll Right">
+          <i>&rarr;</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative px-4 md:px-52 md:mt-10">
+    <div class="carousel-container overflow-x-scroll" #carousel>
+      <div class="carousel flex gap-4">
+        <mat-card *ngFor="let card of cards" class="card min-w-[200px] max-w-[280px]">
+          <div class="image-container">
+            <img mat-card-image [src]="card.image" alt="{{ card.title }}" (click)="onImageClick(card.id)">
+            <p class="overlay-text">{{ card.description }}</p>
+          </div>
+          <mat-card-header>
+            <mat-card-title>{{ card.title }}</mat-card-title>
+            <mat-card-title class="text-sm flex items-center">
+              <img mat-card-image [src]="card.image1" alt="{{ card.title }}" class="w-5 h-5 mr-1">
+              {{ card.time }}
+            </mat-card-title>
+            <mat-card-subtitle>{{ card.food }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ card.city }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col md:flex-row justify-between items-center md:px-52 mt-5 px-4">
+  <p class="text-gray-950 text-xl md:text-2xl font-semibold pt-5">Restaurants with online food delivery in Kurnool</p>
+</div>
+
+<div class="flex flex-wrap md:px-52 px-4 mb-4 mt-5 gap-2">
+  <button class="px-4 py-2 bg-white border rounded-full shadow-sm font-bold">Filter</button>
+  <button class="px-4 py-2 bg-white border rounded-full shadow-sm font-bold">Sort By</button>
+  <button class="px-4 py-2 bg-white border rounded-full shadow-sm font-bold">Ratings 4.0+</button>
+  <button  (click)="filterItems('Veg')"class="px-4 py-2 bg-white border rounded-full shadow-sm font-bold">Pure Veg</button>
+  <button class="px-4 py-2 bg-white border rounded-full shadow-sm font-bold">Offers</button>
+  <button class="px-4 py-2 bg-white border rounded-full shadow-sm font-bold">Rs. 300-Rs. 600</button>
+  <button class="px-4 py-2 bg-white border rounded-full shadow-sm font-bold">Less than Rs. 300</button>
+</div>
+
+<div class="relative px-4 md:px-52 mt-10">
+  <div class="carousel-container overflow-x-scroll" #carousel>
+    <div class="carousel flex flex-wrap gap-2">
+      <mat-card *ngFor="let card of filteredCards" class="card min-w-[180px] md:w-1/5" style="min-width: 220px;">
+        <div class="image-container">
+          <img mat-card-image [src]="card.image" alt="{{ card.title }}" (click)="onImageClick(card.id)">
+          <p class="overlay-text">{{ card.description }}</p>
+        </div>
+        <mat-card-header>
+          <mat-card-title>{{ card.title }}</mat-card-title>
+          <mat-card-title class="text-sm flex items-center">
+            <img mat-card-image [src]="card.image1" alt="{{ card.title }}" class="w-5 h-5 mr-1">
+            {{ card.time }}
+          </mat-card-title>
+          <mat-card-subtitle>{{ card.food }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ card.city }}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div class=" py-4 space-y-8">
+  <div class="md:mx-40 md:mt-10">
+      <p class="text-2xl font-bold mb-4">Best Places to Eat Across Cities</p>
+      <div class="grid grid-cols-2 text-gray-800  sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <button class="py-2 px-4 border  border-gray-800 rounded-lg text-center">Best Restaurant in Banglore</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in chennai</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in pune</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in mumbai</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in Delhi</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in Hyderabad</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in Kolkata</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in chandigarh</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in Ahmedabad</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in jaipur</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Best Restaurant in Nagpur</button>
+        <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Show More</button>
+      </div>
+    </div>
+  <!-- Best Cuisines Near Me Section -->
+  <div class="md:mx-40 md:mt-10">
+    <p class="text-2xl font-bold mb-4">Best Cuisines Near Me</p>
+    <div class="grid grid-cols-2 text-gray-800 sm:grid-cols-3 md:grid-cols-4 gap-4 ">
+      <button class="py-2 px-4 border  border-gray-800 rounded-lg text-center">Chinese Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">South Indian Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Indian Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Kerala Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Korean Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">North Indian Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Seafood Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Bengali Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Punjabi Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Italian Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Andhra Restaurant Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Show More</button>
+    </div>
+  </div>
+
+  <!-- Explore Every Restaurants Near Me Section -->
+  <div class="md:mx-36 md:mt-10 ">
+    <p class="text-2xl font-bold mb-4">Explore Every Restaurants Near Me</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-800 ">
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Explore Restaurants Near Me</button>
+      <button class="py-2 px-4 border border-gray-800 rounded-lg text-center">Explore Top Rated Restaurants Near Me</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

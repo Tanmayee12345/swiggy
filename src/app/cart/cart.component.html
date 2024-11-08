@@ -1,0 +1,58 @@
+
+<app-navbar></app-navbar>
+<div *ngIf="cart && cart.length > 0" class="cart-container bg-white shadow-lg rounded-lg p-6 md:mx-52 mt-6">
+  <h2 class="text-2xl font-bold mb-4 text-gray-800">Cart Items</h2>
+  
+  <ul>
+    <li *ngFor="let item of cart; let i = index" class="border-b border-gray-200 py-4 last:border-b-0">
+      <div class="flex justify-between items-center">
+        <!-- Item description -->
+        <div class="text-gray-700 flex-1">
+          <h3 class="text-lg font-medium">{{ item.name }}</h3>
+          <p class="text-sm text-gray-500">{{ item.description }}</p>
+          <p class="text-sm font-semibold text-gray-600">
+            Price: {{ item.price | currency:'INR':'symbol':'1.0-0' }}
+          </p>
+          
+          <!-- Quantity Controls -->
+          <div class="flex items-center mt-2">
+            <button (click)="decreaseQuantity(i)" 
+                    class="bg-gray-200 text-gray-700 px-2 py-1 rounded-l hover:bg-gray-300 transition duration-150"
+                    [disabled]="item.quantity === 1">
+              -
+            </button>
+            <span class="mx-3">{{ item.quantity }}</span>
+            <button (click)="increaseQuantity(i)" 
+                    class="bg-gray-200 text-gray-700 px-2 py-1 rounded-r hover:bg-gray-300 transition duration-150">
+              +
+            </button>
+          </div>
+        </div>
+        
+        <!-- Total price for the item and remove button -->
+        <div class="flex items-center">
+          <span class="text-lg font-semibold text-gray-800 mr-4">{{ (item.price * item.quantity) | currency:'INR':'symbol':'1.0-0' }}</span>
+          <button (click)="removeFromCart(i)" 
+                  class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-150">
+            Remove
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Empty cart message -->
+<div *ngIf="cart && cart.length === 0" class="empty-cart-message p-6 md:mx-52 mt-6 bg-white text-gray-600 shadow-lg rounded-lg">
+  <p class="text-lg text-center">Your cart is empty!</p>
+</div>
+
+<!-- Total price and checkout section -->
+<div *ngIf="cart.length > 0" class="total-price-section bg-gray-50 shadow-lg rounded-lg p-6 mt-6 md:mx-52">
+  <h2 class="text-xl font-semibold text-gray-800">Total Price: {{ getTotalPrice() | currency:'INR':'symbol':'1.0-0'}}</h2>
+  <!-- Checkout button -->
+  <button (click)="checkout()" 
+          class="bg-green-500 text-white font-bold px-6 py-2 rounded mt-4 hover:bg-green-600 transition duration-150">
+    Checkout
+  </button>
+</div>

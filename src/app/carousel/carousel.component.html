@@ -1,0 +1,75 @@
+<app-navbar></app-navbar>
+<div class="shadow-md pb-10">
+  <!-- Container for the centered text and buttons -->
+  <div class="flex flex-row justify-between items-center px-4 sm:px-8 md:px-52 space-x-2">
+    <!-- Text and Arrow Buttons Container -->
+    <div class="flex items-center w-full justify-between md:w-auto">
+      <!-- Centered Text -->
+      <p class="text-gray-950 text-xl md:text-2xl font-semibold text-center md:text-left">
+        What's on your mind?
+      </p>
+
+      <!-- Arrow Buttons for Small Screens (Visible Only on Small Screens) -->
+      <div class="flex space-x-2 ml-4 md:hidden">
+        <button 
+          (click)="moveLeft()" 
+          class="arrow-button bg-gray-200 hover:bg-gray-300 p-2 rounded-full"
+          [ngClass]="{'bg-gray-400 text-gray-600 cursor-not-allowed': isAtStart, 'hover:bg-gray-300': !isAtStart}"
+          [disabled]="isAtStart"
+        >
+          <i>&larr;</i>
+        </button>
+        
+        <button 
+          (click)="moveRight()" 
+          class="arrow-button bg-gray-200 hover:bg-gray-300 p-2 rounded-full"
+          [ngClass]="{'bg-gray-400 text-gray-600 cursor-not-allowed': isAtEnd, 'hover:bg-gray-300': !isAtEnd}"
+          [disabled]="isAtEnd"
+        >
+          <i>&rarr;</i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Arrow Buttons for Medium and Larger Screens (Hidden on Small Screens) -->
+    <div class="hidden md:flex space-x-2 mt-2 md:mt-0">
+      <button 
+        (click)="moveLeft()" 
+        class="arrow-button bg-gray-200 hover:bg-gray-300 p-2 rounded-full"
+        [ngClass]="{'bg-gray-400 text-gray-600 cursor-not-allowed': isAtStart, 'hover:bg-gray-300': !isAtStart}"
+        [disabled]="isAtStart"
+      >
+        <i>&larr;</i>
+      </button>
+      
+      <button 
+        (click)="moveRight()" 
+        class="arrow-button bg-gray-200 hover:bg-gray-300 p-2 rounded-full"
+        [ngClass]="{'bg-gray-400 text-gray-600 cursor-not-allowed': isAtEnd, 'hover:bg-gray-300': !isAtEnd}"
+        [disabled]="isAtEnd"
+      >
+        <i>&rarr;</i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Carousel Container -->
+  <div class="carousel-container overflow-x-auto mx-4 sm:mx-8 md:mx-52 mt-6 md:mt-12">
+    <div #carousel class="carousel flex gap-2 sm:gap-4 md:gap-6">
+      <img src="assets/biryani.jpg" alt="Biryani" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/pizza.jpg" alt="Pizza" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/shawarma.jpg" alt="Shawarma" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="../../assets/burger" alt="Burger" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/shake.jpg" alt="Shake" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/noodles.jpg" alt="Noodles" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/momos.jpg" alt="Momos" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/samosa.jpg" alt="Samosa" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/idli.jpg" alt="Idli" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/dosa.jpg" alt="Dosa" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/voda.jpg" alt="Voda" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/cake.jpg" alt="Cake" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/chinese.jpg" alt="Chinese" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+      <img src="assets/pakoda.jpg" alt="Pakoda" class="rounded-full shadow-md w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32">
+    </div>
+  </div>
+</div>

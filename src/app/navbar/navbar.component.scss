@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333; /* Set a base font color */
+  background-color: #f9f9f9; /* Light background for better readability */
+}
+
+
+
+a:hover {
+  color: rgb(249 115 22);
+
+}
+/* Normal image styling */
+img {
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for the image */
+img:hover {
+  transform: scale(1.5); /* Slight zoom-in effect */
+  filter: brightness(80%); /* Darkens the image for a "color change" */
+}
+
+
+

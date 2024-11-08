@@ -1,0 +1,103 @@
+<header class="flex justify-between items-center bg-white border-b border-gray-200 md:mx-40 md:py-4 sm:py-2">
+  <div class="relative inline-block text-left group">
+    <!-- Dropdown Trigger -->
+    <span class="text-lg font-medium hover:text-orange-600 underline underline-offset-8 md:mr-20 cursor-pointer" (click)="toggleDropdown()">
+      {{ selectedCity }}
+      <i class="transform rotate-45 inline-block border-r-2 border-b-2 border-orange-600 w-2 h-2 ml-1"></i>
+    </span>
+  
+    <!-- Dropdown Menu -->
+    <div class="absolute mt-2 w-48 bg-white rounded-md shadow-lg z-10" *ngIf="isOpen">
+      <ul class="py-2">
+        <!-- Active Location Option -->
+        <li (click)="selectCity('Kurnool')" class="px-4 py-2 text-black hover:bg-orange-100 cursor-pointer">
+          Kurnool
+        </li>
+  
+        <!-- Grayed Out Locations -->
+        <li class="px-4 py-2 text-gray-400 cursor-not-allowed">Chennai</li>
+        <li class="px-4 py-2 text-gray-400 cursor-not-allowed">Hyderabad</li>
+        <li class="px-4 py-2 text-gray-400 cursor-not-allowed">Bangalore</li>
+      </ul>
+    </div>
+  </div>
+
+  <nav class="hidden md:flex items-center space-x-8">
+    <a href="#" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/bag.png" alt="Swiggy Corporate" class="h-6 w-6 mr-1">
+      Swiggy Corporate
+    </a>
+  
+      <a routerLink="/search" (click)="toggleSearch()" class="flex items-center text-gray-700 font-bold hover:text-black">
+        <img src="../../assets/search.png" alt="Search" class="h-5 w-5 mr-1">
+        Search
+      </a>
+      
+
+    <a routerLink="/offers" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/offer.png" alt="Offers" class="h-6 w-6 mr-1">
+      Offers <sup class="text-orange-500 font-semibold ml-1">NEW</sup>
+    </a>
+    <a routerLink="/help" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/help.png" alt="Help" class="h-6 w-6 mr-1">
+      Help
+    </a>
+
+    <a routerLink="/cart" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/shopping-cart.png" alt="Cart" class="h-6 w-6 mr-1">
+      Cart
+    </a>
+    <a routerLink="/favourites" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/heart.png" alt="Cart" class="h-6 w-6 mr-1">
+      Favourites
+    </a>
+    <a routerLink="/logout" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/logout.png" alt="Cart" class="h-5 w-5 mr-1">
+      Logout
+    </a>
+  </nav>
+
+  <!-- Responsive menu icon -->
+  <button (click)="toggleMenu()" class="md:hidden p-2 rounded-lg focus:outline-none" aria-label="Toggle menu">
+    <i class="text-xl">☰</i>
+  </button>
+</header>
+
+<!-- Mobile menu dropdown -->
+<div *ngIf="isMenuOpen" class="md:hidden mt-2">
+  <div class="flex flex-col space-y-2">
+    <a href="#" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/bag.png" alt="Swiggy Corporate" class="h-6 w-6 mr-1">
+      Swiggy Corporate
+    </a>
+  
+      <a routerLink="/search" (click)="toggleSearch()" class="flex items-center text-gray-700 font-bold hover:text-black">
+        <img src="../../assets/search.png" alt="Search" class="h-5 w-5 mr-1">
+        Search
+      </a>
+      
+
+    <a routerLink="/offers" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/offer.png" alt="Offers" class="h-6 w-6 mr-1">
+      Offers <sup class="text-orange-500 font-semibold ml-1">NEW</sup>
+    </a>
+    <a routerLink="/help" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/help.png" alt="Help" class="h-6 w-6 mr-1">
+      Help
+    </a>
+
+    <a routerLink="/cart" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/shopping-cart.png" alt="Cart" class="h-6 w-6 mr-1">
+      Cart
+    </a>
+    <a routerLink="/favourites" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/heart.png" alt="Cart" class="h-6 w-6 mr-1">
+      Favourites
+    </a>
+    <a routerLink="/logout" class="flex items-center text-gray-700 font-bold hover:text-black">
+      <img src="../../assets/logout.png" alt="Cart" class="h-5 w-5 mr-1">
+      Logout
+    </a>
+
+  </div>
+</div>
